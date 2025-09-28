@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IndekStat</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#f1662a',
+                            light: '#ff7f45',
+                            dark: '#c04916'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'ui-sans-serif', 'system-ui']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .card-corner {
+            box-shadow: 0 6px 18px rgba(241, 102, 42, 0.16);
+        }
+
+        .service-card {
+            min-height: 260px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body class="antialiased text-gray-800 bg-white font-sans">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <div class="font-bold text-lg">Indek<span class="text-brand">Stat</span></div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="#home" class="text-brand">Beranda</a>
+                <a href="#about">Tentang Kami</a>
+                <a href="#services">Layanan</a>
+                <a href="#articles">Artikel</a>
+                <a href="#contact">Kontak</a>
+            </nav>
+
+            <button id="mobileToggle" class="md:hidden p-2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="#111827" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+            <nav class="flex flex-col gap-2 text-sm">
+                <a href="#home" class="py-2">Beranda</a>
+                <a href="#about" class="py-2">Tentang Kami</a>
+                <a href="#services" class="py-2">Layanan</a>
+                <a href="#articles" class="py-2">Artikel</a>
+                <a href="#contact" class="py-2">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="relative bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 pt-0 pb-12 md:pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+            <!-- Right Illustration (Mobile: di atas, Desktop: di kanan) -->
+            <div class="order-1 md:order-2 flex justify-center md:justify-end">
+                <div class="relative w-56 sm:w-72 md:w-[480px] lg:w-[550px]">
+                    <img src="/assets/hero.png" alt="Ilustrasi Indekstat"
+                        class="w-full h-auto object-contain drop-shadow-lg">
+                </div>
+            </div>
+
+            <!-- Left Content -->
+            <div class="order-2 md:order-1 space-y-6 text-center md:text-left">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+                    Dedikasi untuk <span class="text-brand">Indonesia</span>
+                </h1>
+                <p class="text-gray-600 max-w-lg mx-auto md:mx-0">
+                    Mengubah data menjadi kebijakan publik dan strategi politik yang akurat,
+                    tepat sasaran, dan berkelanjutan.
+                </p>
+                <a href="#"
+                    class="inline-block px-6 py-3 rounded-md bg-brand text-white font-semibold shadow hover:brightness-95">
+                    UNDUH PROFIL KAMI ▸
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Tentang <span class="text-brand">Kami</span></h2>
+            <p class="text-gray-600 max-w-3xl mx-auto mb-12">
+                IndekStat adalah lembaga riset dan konsultan kebijakan publik yang mendukung pemerintah, bisnis, dan
+                masyarakat dengan data serta analisis yang akurat dan berkelanjutan.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <!-- Item 1 -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div
+                        class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-brand text-white mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zM5.5 20a6.5 6.5 0 0113 0v1H5.5v-1z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Tim Berpengalaman</h3>
+                    <p class="text-gray-600 text-sm">Didukung oleh peneliti dan konsultan yang berkompeten di bidang
+                        riset kebijakan publik.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div
+                        class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-brand text-white mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Analisis Tepat Sasaran</h3>
+                    <p class="text-gray-600 text-sm">Kami memberikan hasil riset yang relevan dan dapat langsung
+                        digunakan dalam pengambilan keputusan.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-white rounded-lg shadow-sm border p-6">
+                    <div
+                        class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-brand text-white mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 3h18v4H3zM3 9h18v12H3z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Jaringan Luas</h3>
+                    <p class="text-gray-600 text-sm">Kolaborasi dengan berbagai lembaga pemerintah, swasta, hingga
+                        komunitas di seluruh Indonesia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY INDEKSTAT -->
+    <section id="why" class="py-20 bg-orange-50">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+            <!-- Left Illustration -->
+            <div class="flex justify-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Consultant Illustration"
+                    class="w-72 h-auto">
+            </div>
+
+            <!-- Right Content -->
+            <div>
+                <h2 class="text-3xl font-bold mb-4">Mengapa <span class="text-brand">Indekstat?</span></h2>
+                <p class="text-gray-700 mb-8">
+                    Kami mengedepankan metodologi riset yang terpercaya, tim ahli berpengalaman, serta komitmen untuk
+                    menghadirkan solusi berbasis data yang relevan dengan kebutuhan Anda. Semua itu kami wujudkan lewat
+                    tiga
+                    hal utama
+                    yang menjadi kekuatan Indekstat:
+                </p>
+
+                <div class="space-y-6">
+                    <!-- Item 1 -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-brand text-white font-bold">
+                            1</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Berbasis Data Akurat</h3>
+                            <p class="text-gray-600 text-sm">Semua keputusan dan strategi kami lahir dari riset yang
+                                valid, bukan asumsi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-brand text-white font-bold">
+                            2</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Tim Profesional</h3>
+                            <p class="text-gray-600 text-sm">Didukung oleh konsultan berpengalaman di bidang kebijakan
+                                publik, politik, dan bisnis.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-brand text-white font-bold">
+                            3</div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Solusi Tepat Sasaran</h3>
+                            <p class="text-gray-600 text-sm">Rekomendasi kami selalu relevan dengan kebutuhan klien dan
+                                kondisi nyata di lapangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Apa yang Kami <span class="text-brand">Tawarkan</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+                Kami membantu para pengambil kebijakan merancang, menjalankan, dan mengevaluasi program publik secara
+                lebih efektif dengan dukungan data dan teknologi.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: content top-left, icon bottom-right -->
+                <div
+                    class="service-card bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-200 p-6">
+                    <div class="text-left mb-16">
+                        <h3 class="text-lg font-semibold mb-3">Riset dan Studi Kebijakan Publik</h3>
+                        <p class="text-gray-600 text-sm mb-6">Pengukuran indeks, analisis peluang investasi, evaluasi
+                            dan analisis dampak, survei opini publik.</p>
+                        <a href="#"
+                            class="inline-block px-5 py-2 text-sm font-semibold bg-brand text-white rounded shadow">DETAIL
+                            LAYANAN ▸</a>
+                    </div>
+                    <div
+                        class="absolute bottom-4 right-4 w-16 h-16 bg-brand rounded-tl-3xl flex items-center justify-center text-white card-corner">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1M17 8a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 2: content top-right, icon bottom-left -->
+                <div
+                    class="service-card bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col items-end text-right">
+                    <div class="mb-16">
+                        <h3 class="text-lg font-semibold mb-3">Konsultasi Politik</h3>
+                        <p class="text-gray-600 text-sm mb-6">Public identity visual / Digital political strategy, Dapil
+                            analysis.</p>
+                        <a href="#"
+                            class="inline-block px-5 py-2 text-sm font-semibold bg-brand text-white rounded shadow">DETAIL
+                            LAYANAN ▸</a>
+                    </div>
+                    <div
+                        class="absolute bottom-4 left-4 w-16 h-16 bg-brand rounded-tr-3xl flex items-center justify-center text-white card-corner">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 3: content bottom-left, icon top-right -->
+                <div
+                    class="service-card bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col justify-end text-left">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Riset Manajemen dan Bisnis</h3>
+                        <p class="text-gray-600 text-sm mb-6">Feasibility study, business plan and development, market
+                            research analysis and marketing strategy, tata kelola organisasi.</p>
+                        <a href="#"
+                            class="inline-block px-5 py-2 text-sm font-semibold bg-brand text-white rounded shadow">DETAIL
+                            LAYANAN ▸</a>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 w-16 h-16 bg-brand rounded-bl-3xl flex items-center justify-center text-white card-corner">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 4: content bottom-left, icon top-left -->
+                <div
+                    class="service-card bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-200 p-6 flex flex-col justify-end text-right">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Data Management and Analytics</h3>
+                        <p class="text-gray-600 text-sm mb-6">Data verification and management, data training.</p>
+                        <a href="#"
+                            class="inline-block px-5 py-2 text-sm font-semibold bg-brand text-white rounded shadow">DETAIL
+                            LAYANAN ▸</a>
+                    </div>
+                    <div
+                        class="absolute top-4 left-4 w-16 h-16 bg-brand rounded-br-3xl flex items-center justify-center text-white card-corner">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 10h4l3 9 4-18 3 9h4" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-5 bg-gray-50 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <!-- Title -->
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Jumlah Proyek <span class="text-brand">Kami</span>
+            </h2>
+            <p class="text-gray-600 mb-5 max-w-2xl mx-auto">
+                Selama lebih dari 9 tahun, Indekstat telah dipercaya menangani ratusan proyek riset dan konsultasi di
+                seluruh Indonesia.
+            </p>
+
+            <!-- Main Counter -->
+            <div class="mb-10">
+                <div class="inline-block bg-white shadow-md rounded-xl px-8 py-6">
+                    <div class="text-4xl md:text-5xl font-extrabold text-brand">122</div>
+                    <p class="mt-2 text-gray-600 font-medium">Total Proyek</p>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="relative">
+                <img src="/assets/indo.jpg" alt="Peta Indonesia"
+                    class="mx-auto max-w-6xl w-full drop-shadow-md rounded-lg">
+                <!-- optional: overlay point or gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent rounded-lg">
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mt-12">
+                <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+                    <div class="text-3xl font-bold text-brand">9+</div>
+                    <p class="text-gray-600 mt-2">Tahun Pengalaman</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+                    <div class="text-3xl font-bold text-brand">4</div>
+                    <p class="text-gray-600 mt-2">Unit Bisnis</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+                    <div class="text-3xl font-bold text-brand">400+</div>
+                    <p class="text-gray-600 mt-2">Klien Terpercaya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients" class="pb-10 pt-5 bg-white mb-[20px]">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <!-- Title -->
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">
+                Klien & Mitra <span class="text-brand">Indekstat</span>
+            </h2>
+            <p class="text-gray-600 mb-[70px] text-sm md:text-base">
+                Berbagai lembaga, institusi, dan organisasi telah mempercayakan riset dan analisanya kepada Indekstat
+                sebagai mitra strategis
+            </p>
+
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide flex justify-center items-center">
+                        <img src="/assets/bri.png" alt="BRI" class="h-12 sm:h-14 md:h-16 lg:h-20 object-contain">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center">
+                        <img src="/assets/esdm.png" alt="ESDM" class="h-14 sm:h-16 md:h-20 lg:h-24 object-contain">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center">
+                        <img src="/assets/kemendikbud.png" alt="Kemdikbud"
+                            class="h-14 sm:h-16 md:h-20 lg:h-24 object-contain">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center">
+                        <img src="/assets/ristek.png" alt="Ristekdikti"
+                            class="h-14 sm:h-16 md:h-20 lg:h-24 object-contain">
+                    </div>
+                    <div class="swiper-slide flex justify-center items-center">
+                        <img src="/assets/komdigi.png" alt="Kominfo"
+                            class="h-16 sm:h-20 md:h-24 lg:h-28 object-contain">
+                    </div>
+                </div>
+
+                <!-- Controls (Pagination + Arrows) -->
+                <div class="flex justify-center items-center gap-4 mt-6">
+                    <div
+                        class="swiper-button-prev !static !relative !top-0 !translate-y-0 !m-0 !w-8 !h-8 !text-gray-500 hover:!text-brand">
+                    </div>
+                    <div class="swiper-pagination !static"></div>
+                    <div
+                        class="swiper-button-next !static !relative !top-0 !translate-y-0 !m-0 !w-8 !h-8 !text-gray-500 hover:!text-brand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="py-10 mb-[180px] bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <!-- Title -->
+            <h2 class="text-2xl md:text-3xl font-bold mb-20">
+                Bangga Menjadi <span class="text-brand">Bagian Dari</span>
+            </h2>
+
+            <!-- Logos -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
+                <!-- Logo 1 -->
+                <div class="flex justify-center">
+                    <img src="/assets/persepi.png" alt="PERSEPI" class="h-12 md:h-[100px] object-contain">
+                </div>
+                <!-- Logo 2 -->
+                <div class="flex justify-center">
+                    <img src="/assets/kuda.png" alt="WAPOR" class="h-12 md:h-[100px] object-contain">
+                </div>
+                <!-- Logo 3 -->
+                <div class="flex justify-center">
+                    <img src="/assets/wapor.png" alt="IAPC" class="h-12 md:h-[100px] object-contain">
+                </div>
+                <!-- Logo 4 (opsional, kalau ada) -->
+                <div class="flex justify-center">
+                    <img src="/assets/iapc.png" alt="Other Association" class="h-12 md:h-[100px] object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative bg-orange-50">
+        <!-- CTA: centered and overlapping the top of the footer -->
+        <div class="absolute inset-x-0 -top-8 flex justify-center z-20 pointer-events-none">
+            <div class="pointer-events-auto w-full max-w-4xl px-4 sm:px-6">
+                <div
+                    class="bg-brand text-white rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 px-6 py-5 shadow-lg text-center md:text-left">
+                    <h3 class="text-lg md:text-xl font-semibold">
+                        Mulai Bersama <span class="font-extrabold">Indekstat</span> Sekarang
+                    </h3>
+                    <a href="#contact"
+                        class="inline-block px-5 py-2 text-sm font-semibold border border-white rounded-md hover:bg-white hover:text-brand transition">
+                        Hubungi Kami
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- main footer content -->
+        <div class="max-w-6xl mx-auto px-6 pt-24 pb-0">
+            <div class="grid grid-cols-1 mt-5 md:mt-1 md:grid-cols-2 gap-10 items-start text-center md:text-left">
+                <!-- Left -->
+                <div>
+                    <div class="font-bold text-2xl mb-2">
+                        Indek<span class="text-brand">Stat</span>
+                    </div>
+                    <div class="text-gray-700 font-medium mb-2">PT. Indekstat Konsultan Indonesia</div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        SCBD, Marquee Equity Tower Floor 37th, Jl. Jend. Sudirman Kav 52–53, Senayan, Kec. Kby. Baru,
+                        Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190
+                    </p>
+                </div>
+
+                <!-- Right -->
+                <div class="flex flex-col items-center md:items-end">
+                    <p class="text-gray-700 font-medium mb-4 md:mb-5">Temui Kami di</p>
+                    <div class="flex flex-wrap justify-center md:justify-end gap-3 md:gap-4">
+                        <!-- circle icons -->
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow text-brand hover:bg-brand hover:text-white transition"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow text-brand hover:bg-brand hover:text-white transition"
+                            aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow text-brand hover:bg-brand hover:text-white transition"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow text-brand hover:bg-brand hover:text-white transition"
+                            aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- decorative orange curve -->
+        <div class="mt-10">
+            <svg class="w-full h-16 block" viewBox="0 0 1440 120" preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,40 C220,130 440,0 720,40 C1000,80 1200,20 1440,80 L1440,120 L0,120 Z" fill="#f1662a" />
+            </svg>
+        </div>
+
+        <!-- copyright bar -->
+        <div class="bg-brand text-white text-center py-3 text-sm">
+            © 2025 Indekstat. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 12, // jarak antar logo lebih rapat
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                640: { slidesPerView: 2, spaceBetween: 10 },
+                1024: { slidesPerView: 4, spaceBetween: 12 },
+            }
+        });
+
+        const toggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        toggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
+</body>
+
+</html>
